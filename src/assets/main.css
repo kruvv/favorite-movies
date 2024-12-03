@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:wght@300;400&display=swap");
+
+body {
+  margin: 0;
+  background: #f9f9f9;
+  font-family: "Roboto Condensed", serif;
+}
+main {
+  max-width: 600px;
+  margin: auto;
+}
