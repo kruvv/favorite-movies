@@ -7,11 +7,47 @@ type Movie = {
   isWatched: boolean;
   id: string | number;
 };
-type MovieType = Partial<Movie>;
+export type MovieType = Partial<Movie>;
+
 export const useMovieStore = defineStore("movieStore", {
   state: () => ({
-    movies: [] as MovieType[],
-    activeTab: 1 as number,
+    movies: [
+      // {
+      //   adult: false,
+      //   backdrop_path: "/zVVYFN9OjiSn43RVYrzgCOu7y6r.jpg",
+      //   genre_ids: [18, 9648, 53],
+      //   id: 9613,
+      //   original_language: "en",
+      //   original_title: "Spider",
+      //   overview:
+      //     "A mentally disturbed man takes residence in a halfway house. His mind gradually slips back into the realm created by his illness, where he replays a key part of his childhood.",
+      //   popularity: 16.367,
+      //   poster_path: "/zvm4WuYxTiGkRagRqHUey0meRQL.jpg",
+      //   release_date: "2002-11-06",
+      //   title: "Spider",
+      //   video: false,
+      //   vote_average: 6.64,
+      //   vote_count: 849,
+      // },
+      // {
+      //   adult: false,
+      //   backdrop_path: "/f99HWL82rx25jOiVE5jo5qA6OjF.jpg",
+      //   genre_ids: [18, 35],
+      //   id: 55825,
+      //   original_language: "en",
+      //   original_title: "Spider",
+      //   overview:
+      //     "A young man tries to make things right again in his relationship after he and his girlfriend get in a fight.",
+      //   popularity: 5.481,
+      //   poster_path: "/97jePhTnH2pHBh4nPfH5aapOsX0.jpg",
+      //   release_date: "2007-06-17",
+      //   title: "Spider",
+      //   video: false,
+      //   vote_average: 6.559,
+      //   vote_count: 118,
+      // },
+    ] as MovieType[],
+    activeTab: 2 as number,
   }),
   getters: {
     watchedMovies(): MovieType[] {
@@ -30,7 +66,7 @@ export const useMovieStore = defineStore("movieStore", {
       this.movies[idx].isWatched = !this.movies[idx].isWatched;
     },
     deleteMovie(id: number) {
-      this.movies = this.movies.splice(id, 1);
+      this.movies = this.movies.filter((el) => el.id != id);
     },
   },
 });
