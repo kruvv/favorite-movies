@@ -13,7 +13,7 @@ interface SearchMovie {
 
 /** Options API*/
 // export const useSearchStore = defineStore("searchStore", {
-//   state: (): SearchMovie => ({
+//   state: (): SearchMovie  => ({
 //     movies: [],
 //     loader: false,
 //   }),

@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { ref, computed } from "vue";
+import { ref, computed, watch, watchEffect } from "vue";
 type Movie = {
   original_title: string;
   overview: string;
@@ -76,6 +76,11 @@ export const useMovieStore = defineStore("movieStore", () => {
   const movies = ref<MovieType[]>([]);
   const activeTab = ref<Number>(2);
 
+  const moviesInLocalStorage = localStorage.getItem("movies");
+  if (moviesInLocalStorage) {
+    movies.value = JSON.parse(moviesInLocalStorage);
+  }
+
   const watchedMovies = computed(() => {
     return movies.value.filter((el: MovieType) => el.isWatched);
   });
@@ -94,6 +99,14 @@ export const useMovieStore = defineStore("movieStore", () => {
   const deleteMovie = (id: number) => {
     movies.value = movies.value.filter((el: MovieType) => el.id != id);
   };
+  watch(
+    () => movies,
+    (state) => {
+      localStorage.setItem("movies", JSON.stringify(state._value));
+    },
+    { deep: true },
+  );
+
   return {
     movies,
     activeTab,
