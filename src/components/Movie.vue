@@ -37,9 +37,9 @@
   </div>
 </template>
 
-<script setup>
-import { useMovieStore } from "../stores/MovieStore.ts";
-import { useSearchStore } from "../stores/SearchStore.ts";
+<script setup lang="ts">
+import { useMovieStore } from "../stores/MovieStore";
+import { useSearchStore } from "../stores/SearchStore";
 
 const movieStore = useMovieStore();
 const searchStore = useSearchStore();

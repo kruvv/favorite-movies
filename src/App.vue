@@ -45,7 +45,7 @@ import Search from "./components/Search.vue";
 import Movie from "./components/Movie.vue";
 import { useMovieStore } from "./stores/MovieStore.ts";
 const movieStore = useMovieStore();
-const setTab = (id) => {
+const setTab = (id:number) => {
   movieStore.setActiveTab(id);
 };
 </script>

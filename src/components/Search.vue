@@ -19,7 +19,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from "vue";
 import Loader from "../components/Loader.vue";
 import Movie from "../components/Movie.vue";

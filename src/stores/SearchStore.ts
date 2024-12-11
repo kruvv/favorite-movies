@@ -40,7 +40,7 @@ const URL_API = `${import.meta.env.VITE_BASE_URL_API}${import.meta.env.VITE_API_
 /** Composition API */
 export const useSearchStore = defineStore("searchStore", () => {
   const loader = ref(false);
-  const movies = ref([]);
+  const movies = ref<MovieType[]>([]);
 
   const getMovies = async (search: string) => {
     loader.value = true;
