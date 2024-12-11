@@ -3,13 +3,12 @@ import { useMovieStore } from "./MovieStore.ts";
 import { MovieType } from "./MovieStore.ts";
 import { ref } from "vue";
 
-const URL_API =
-  "https://api.themoviedb.org/3/search/movie?api_key=ad433a5055edbcbe820119c8cadcc933&query=";
+const URL_API = `${import.meta.env.VITE_BASE_URL_API}${import.meta.env.VITE_API_KEY}&query=`;
 
-interface SearchMovie {
-  movies: MovieType[];
-  loader: Boolean;
-}
+// interface SearchMovie {
+//   movies: MovieType[];
+//   loader: Boolean;
+// }
 
 /** Options API*/
 // export const useSearchStore = defineStore("searchStore", {
