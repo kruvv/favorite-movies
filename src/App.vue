@@ -1,6 +1,7 @@
 <template>
   <main>
     <header class="header">
+      <img src="/logo.svg" alt="logo" class="header-logo" />
       <h2>My Favorites Movies</h2>
     </header>
     <div class="tabs">
