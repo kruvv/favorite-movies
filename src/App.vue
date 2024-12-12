@@ -1,7 +1,6 @@
 <template>
   <main>
     <header class="header">
-      <img src="/logo.svg" alt="logo" class="header-logo" />
       <h2>My Favorites Movies</h2>
     </header>
     <div class="tabs">
@@ -45,7 +44,7 @@ import Search from "./components/Search.vue";
 import Movie from "./components/Movie.vue";
 import { useMovieStore } from "./stores/MovieStore.ts";
 const movieStore = useMovieStore();
-const setTab = (id:number) => {
+const setTab = (id: number) => {
   movieStore.setActiveTab(id);
 };
 </script>
